@@ -7,6 +7,7 @@ function Timer() {
   const [isRunning, setIsRunning] = useState(false);
   const [etat, setEtat] = useState("");
 
+
   const formatTemps = (totalSecondes) => {
     const minutes = Math.floor(totalSecondes / 60);
     const seconde = totalSecondes % 60;
@@ -22,8 +23,12 @@ function Timer() {
       interval = setInterval(() => {
         settempsRestant((prev) => prev - 1);
       }, 1000);
-    } else {
+    } 
+    else {
       clearInterval(interval);
+      if(isRunning && tempsRestant==0){
+        enregistrerSession();
+              }
     }
 
     return () => clearInterval(interval);
@@ -44,6 +49,22 @@ function Timer() {
     settempsRestant(1500);
     setEtat("reset");
   };
+
+function enregistrerSession(){
+const sessions=  localStorage.getItem("nbSessions");
+let sessionNb=parseInt(sessions);
+
+if(isNaN(sessionNb)){
+
+  sessionNb=0;
+}
+sessionNb++;
+localStorage.setItem("nbSessions",sessionNb);
+
+
+
+}
+
 
   return (
     <div className="w-screen h-screen relative bg-gradient-to-r from-blue-100 to-violet-300 flex flex-col items-center justify-center gap-10">
