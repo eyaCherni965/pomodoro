@@ -19,13 +19,13 @@ function Statistiques() {
     sessionsParJours = JSON.parse(sessionsParJours);
   } else {
     sessionsParJours = {
-      Dimanche: 0,
-      Lundi: 0,
-      Mardi: 0,
-      Mercredi: 0,
-      Jeudi: 0,
-      Vendredi: 0,
-      Samedi: 0,
+      Dim: 0,
+      Lun: 0,
+      Mar: 0,
+      Mer: 0,
+      Jeu: 0,
+      Ven: 0,
+      Sam: 0,
     };
   }
   // Transforme l’objet en tableau pour le graphique
@@ -55,7 +55,7 @@ function Statistiques() {
         Statistiques Hebdomadaires
       </p>
       {/*Construction visuel du graphique */}
-      <div className="w-[400px] h-[200px] sm:w-[800px]">
+      <div className="w-[400px] h-[300px] sm:w-[800px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

@@ -78,13 +78,13 @@ function Timer() {
 
     // Mise à jour des sessions par jour
     const jours = [
-      "Dimanche",
-      "Lundi",
-      "Mardi",
-      "Mercredi",
-      "Jeudi",
-      "Vendredi",
-      "Samedi",
+      "Dim",
+      "Lun",
+      "Mar",
+      "Mer",
+      "Jeu",
+      "Ven",
+      "Sam",
     ];
     const today = new Date().getDay();
     const jourActuel = jours[today];
@@ -92,13 +92,13 @@ function Timer() {
     let sessionsParJours = JSON.parse(
       localStorage.getItem("sessionsParJours")
     ) || {
-      Dimanche: 0,
-      Lundi: 0,
-      Mardi: 0,
-      Mercredi: 0,
-      Jeudi: 0,
-      Vendredi: 0,
-      Samedi: 0,
+      Dim: 0,
+      Lun: 0,
+      Mar: 0,
+      Mer: 0,
+      Jeu: 0,
+      Ven: 0,
+      Sam: 0,
     };
 
     sessionsParJours[jourActuel]++;
@@ -107,7 +107,7 @@ function Timer() {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-r from-blue-100 to-violet-300 flex flex-col items-center justify-center gap-10">
-      <p className="text-blue-600 italic font-semibold absolute top-20 sm:top-10 left-10 text-sm sm:text-2xl">
+      <p className="text-blue-600 italic font-semibold absolute top-30 sm:top-10 left-10 text-sm sm:text-2xl">
         Concentre-toi. Respire. Progresse.
       </p>
 
