@@ -4,30 +4,30 @@ Une application web simple et efficace de **gestion du temps** basée sur la mé
 
 ---
 
-## Démo en ligne
+# Démo en ligne
 
-👉 [Utiliser l'application] : https://pomodoro-tau-beige.vercel.app/
-
----
-
-## 🧩 Fonctionnalités
-
-- **Timer Pomodoro personnalisé** (durée modifiable)
-- **Pause personnalisable**
-- **Notifications à la fin des pauses**
-- **Statistiques hebdomadaires** avec graphique interactif
-- **Interface responsive et moderne**
-- **Sauvegarde locale** (sessions conservées même si on quitte la page)
+[Utiliser l'application] : https://pomodoro-tau-beige.vercel.app/
 
 ---
 
-## 🖼️ Aperçu de l'app
+# Fonctionnalités
+
+- Timer Pomodoro personnalisé** (durée modifiable)
+- Pause personnalisable**
+-  à la fin des pauses**
+- Statistiques hebdomadaires** avec graphique interactif
+- Interface responsive et moderne**
+- Sauvegarde locale** (sessions conservées même si on quitte la page)
+
+---
+
+# Aperçu de l'app
 
 <img width="958" alt="Image" src="https://github.com/user-attachments/assets/1d7be3d5-01bc-4843-a79b-6cfed6fdb78f" />
 
 ---
 
-## 🛠️ Technologies
+# Technologies
 
 - React
 - React Router
@@ -37,7 +37,7 @@ Une application web simple et efficace de **gestion du temps** basée sur la mé
 - Vercel (déploiement)
 
   
-## 📁 Structure du code 
+# Structure du code 
 le code principal de l'application se trouve dans le dossier composants. Voici les fichiers clés :
 
 Timer.js : le composant principal qui gère le compte à rebours Pomodoro.
@@ -50,18 +50,16 @@ Parametre.js : permet de modifier la durée du Pomodoro, de la pause, et d’act
 
 Le fichier App.js utilise react-router-dom pour afficher la bonne page selon l'URL (/, /pause, /stats, /parametre).
 
-## 📁 Structure des pages
+# Structure des pages
 
-| Page        | Description |
-|-------------|-------------|
-| `/`         | Page principale avec le timer |
-| `/pause`    | Timer de pause et phrase de motivation |
-| `/stats`    | Statistiques de productivité hebdomadaire |
-| `/parametre`| Réglages : durée des sessions et notifications |
+`/`         -> Page principale avec le timer 
+`/pause`    -> Timer de pause et phrase de motivation 
+`/stats`    -> Statistiques de productivité hebdomadaire 
+`/parametre`-> Réglages : durée des sessions et notifications 
 
 ---
 
-## 📦 Installation locale (facultatif)
+# Installation locale (facultatif)
 
 ```bash
 git clone https://github.com/eyaCherni965/pomodoro.git
