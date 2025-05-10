@@ -1,4 +1,5 @@
 import React from "react";
+//librairie pour grapgique
 import {
   BarChart,
   Bar,
@@ -8,31 +9,30 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts';
-import { useNavigate } from 'react-router-dom';
+  ResponsiveContainer,
+} from "recharts";
+import { useNavigate } from "react-router-dom";
 
 function Statistiques() {
-
-let sessionsParJours = localStorage.getItem("sessionsParJours");
+  let sessionsParJours = localStorage.getItem("sessionsParJours");
   if (sessionsParJours) {
     sessionsParJours = JSON.parse(sessionsParJours);
   } else {
     sessionsParJours = {
-      "Dimanche": 0,
-      "Lundi": 0,
-      "Mardi": 0,
-      "Mercredi": 0,
-      "Jeudi": 0,
-      "Vendredi": 0,
-      "Samedi": 0
+      Dimanche: 0,
+      Lundi: 0,
+      Mardi: 0,
+      Mercredi: 0,
+      Jeudi: 0,
+      Vendredi: 0,
+      Samedi: 0,
     };
   }
- // Transforme l’objet en tableau pour le graphique
-const data = Object.keys(sessionsParJours).map((jour) => ({
-  jour: jour,
-  sessions: sessionsParJours[jour]
-}));
+  // Transforme l’objet en tableau pour le graphique
+  const data = Object.keys(sessionsParJours).map((jour) => ({
+    jour: jour,
+    sessions: sessionsParJours[jour],
+  }));
 
   const navigate = useNavigate();
 
@@ -44,17 +44,17 @@ const data = Object.keys(sessionsParJours).map((jour) => ({
   }
 
   // Calcul du temps total
-  const dureePomodoro = parseInt(localStorage.getItem("pomodoro")) || 25;
-  const totalMinutes = nbS * dureePomodoro;
+  const historique = JSON.parse(localStorage.getItem("historiqueDurees")) || [];
+  const totalMinutes = historique.reduce((somme, duree) => somme + duree, 0);
   const heures = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
 
   return (
     <div className="w-screen min-h-screen bg-gradient-to-r from-blue-100 to-violet-300 flex flex-col items-center justify-start pt-10 gap-6">
-      <p className="text-center text-blue-600 font-bold mb-4 text-xl sm:text-2xl hover:scale-105 hover:text-violet-600 transition duration-300">
+      <p className="italic text-center text-blue-600 font-bold mb-4 text-xl sm:text-2xl hover:scale-105 hover:text-violet-600 transition duration-300">
         Statistiques Hebdomadaires
       </p>
-
+      {/*Construction visuel du graphique */}
       <div className="w-[600px] h-[300px] sm:w-[800px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
@@ -82,7 +82,9 @@ const data = Object.keys(sessionsParJours).map((jour) => ({
         <span className="text-violet-600 font-bold text-sm sm:text-xl hover:scale-110 transition duration-300">
           {nbS}
         </span>
-        <span className="text-blue-600 font-bold text-sm sm:text-xl">sessions. Temps total : </span>
+        <span className="text-blue-600 font-bold text-sm sm:text-xl">
+          sessions. Temps total :{" "}
+        </span>
         <span className="text-violet-500 font-bold text-sm sm:text-xl hover:scale-110 transition duration-300">
           {heures}h et {minutes}min
         </span>
@@ -95,11 +97,12 @@ const data = Object.keys(sessionsParJours).map((jour) => ({
         >
           Timer
         </button>
-        <button onClick={()=>navigate("/parametre")} 
-        className="bg-violet-400 px-4 py-2 rounded-full shadow-xl hover:bg-violet-700 hover:scale-110 transition duration-300">
+        <button
+          onClick={() => navigate("/parametre")}
+          className="bg-violet-400 px-4 py-2 rounded-full shadow-xl hover:bg-violet-700 hover:scale-110 transition duration-300"
+        >
           <img src="/parametres.png" className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
-
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-function Pause() { 
+function Pause() {
   const navigate = useNavigate();
 
   // Initialise la durée de la pause depuis le localStorage en secondes
@@ -19,7 +19,7 @@ function Pause() {
     "Bois un verre d’eau. Ton cerveau carbure mieux hydraté.",
     "Ferme les yeux 20 secondes. Soulage tes yeux.",
     "Note une chose positive qui vient de se passer.",
-    "Marche quelques pas. Ton corps en a besoin."
+    "Marche quelques pas. Ton corps en a besoin.",
   ];
 
   // Sélection aléatoire d'une phrase de motivation
@@ -32,22 +32,23 @@ function Pause() {
   const formatTemps = (totalSecondes) => {
     const minutes = Math.floor(totalSecondes / 60);
     const secondes = totalSecondes % 60;
-    return `${minutes.toString().padStart(2, "0")}:${secondes.toString().padStart(2, "0")}`;
+    return `${minutes.toString().padStart(2, "0")}:${secondes
+      .toString()
+      .padStart(2, "0")}`;
   };
 
   // Gère le décompte du temps
-useEffect(() => {
-  let interval = null;
+  useEffect(() => {
+    let interval = null;
 
-  if (isRunning && tempsRestantPause > 0) {
-    interval = setInterval(() => {
-      setTempsRestantPause(prev => prev - 1);
-    }, 1000);
-  }
+    if (isRunning && tempsRestantPause > 0) {
+      interval = setInterval(() => {
+        setTempsRestantPause((prev) => prev - 1);
+      }, 1000);
+    }
 
-  return () => clearInterval(interval);
-}, [isRunning, tempsRestantPause]);
-
+    return () => clearInterval(interval);
+  }, [isRunning, tempsRestantPause]);
 
   // démarrer le timer
   const handleDemarrer = () => {
@@ -63,8 +64,7 @@ useEffect(() => {
 
   return (
     <div className="w-screen h-screen relative bg-gradient-to-r from-pink-100 to-violet-300 flex flex-col items-center justify-center gap-10">
-      
-      <p className="text-blue-700 font-semibold absolute top-10 left-10 text-sm sm:text-2xl">
+      <p className="italic text-blue-700 font-semibold absolute top-10 left-10 text-sm sm:text-2xl">
         Une pause bien méritée !
       </p>
 
@@ -91,10 +91,10 @@ useEffect(() => {
           {formatTemps(tempsRestantPause)}
         </span>
       </div>
-      
+
       {/* Phrase motivante */}
       <div className="px-6 py-3 bg-gradient-to-r from-pink-300 to-violet-400 rounded shadow-xl">
-        <p className="text-white font-medium text-center text-base sm:text-xl px-4">
+        <p className="text-white font-medium text-center text-base sm:text-xl px-4 italic">
           {phraseAleatoire}
         </p>
       </div>
@@ -131,4 +131,3 @@ useEffect(() => {
 }
 
 export default Pause;
-
