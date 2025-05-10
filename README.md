@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Pomodoro Intelligent — App React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Une application web simple et efficace de **gestion du temps** basée sur la méthode Pomodoro. Développée avec React, elle permet de personnaliser les sessions, visualiser ses progrès, et rester motivé pendant l’étude ou le travail.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Démo en ligne
 
-### `npm start`
+[Utiliser l'application] : https://pomodoro-tau-beige.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Fonctionnalités
 
-### `npm test`
+- Timer Pomodoro personnalisé** (durée modifiable)
+- Pause personnalisable**
+-  à la fin des pauses**
+- Statistiques hebdomadaires** avec graphique interactif
+- Interface responsive et moderne**
+- Sauvegarde locale** (sessions conservées même si on quitte la page)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+# Aperçu de l'app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="958" alt="Image" src="https://github.com/user-attachments/assets/1d7be3d5-01bc-4843-a79b-6cfed6fdb78f" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Technologies
 
-### `npm run eject`
+- React
+- React Router
+- Tailwind CSS
+- Recharts (pour les stats)
+- localStorage (persistance des données)
+- Vercel (déploiement)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  
+# Structure du code 
+le code principal de l'application se trouve dans le dossier composants. Voici les fichiers clés :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Timer.js : le composant principal qui gère le compte à rebours Pomodoro.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Pause.js : gère la minuterie de pause avec une phrase motivante.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Statistiques.js : affiche les statistiques hebdomadaires sous forme de graphique.
 
-## Learn More
+Parametre.js : permet de modifier la durée du Pomodoro, de la pause, et d’activer les notifications.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Le fichier App.js utilise react-router-dom pour afficher la bonne page selon l'URL (/, /pause, /stats, /parametre).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Structure des pages
 
-### Code Splitting
+`/`         -> Page principale avec le timer 
+`/pause`    -> Timer de pause et phrase de motivation 
+`/stats`    -> Statistiques de productivité hebdomadaire 
+`/parametre`-> Réglages : durée des sessions et notifications 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# Installation locale (facultatif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/eyaCherni965/pomodoro.git
+cd pomodoro
+npm install
+npm start
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
