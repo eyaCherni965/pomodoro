@@ -107,7 +107,7 @@ function Timer() {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-r from-blue-100 to-violet-300 flex flex-col items-center justify-center gap-10">
-      <p className="text-blue-600 italic font-semibold absolute top-30 sm:top-10 left-10 text-sm sm:text-2xl">
+      <p className="text-blue-600 italic font-semibold absolute top-24 sm:top-10 left-10 text-sm sm:text-2xl">
         Concentre-toi. Respire. Progresse.
       </p>
 
