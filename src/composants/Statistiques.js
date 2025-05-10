@@ -55,7 +55,7 @@ function Statistiques() {
         Statistiques Hebdomadaires
       </p>
       {/*Construction visuel du graphique */}
-      <div className="w-[600px] h-[300px] sm:w-[800px]">
+      <div className="w-[400px] h-[200px] sm:w-[800px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

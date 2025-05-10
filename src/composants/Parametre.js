@@ -25,7 +25,7 @@ function Parametre() {
   return (
     <div className="w-screen h-screen relative bg-gradient-to-r from-blue-100 to-violet-300 flex flex-col items-center justify-center">
       {/* Titre principal */}
-      <p className="italic text-violet-700 font-semibold absolute top-10 left-10 text-1xl sm:text-2xl">
+      <p className="italic text-violet-700 font-semibold absolute  top-20 sm:top-10 left-10 text-1xl sm:text-2xl">
         Tes préférences, ton efficacité.
       </p>
 
