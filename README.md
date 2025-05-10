@@ -23,7 +23,7 @@ Une application web simple et efficace de **gestion du temps** basée sur la mé
 
 ## 🖼️ Aperçu de l'app
 
-<img src="https://user-images.githubusercontent.com/your-screenshot" width="600" alt="Aperçu Pomodoro App" />
+<img width="958" alt="Image" src="https://github.com/user-attachments/assets/1d7be3d5-01bc-4843-a79b-6cfed6fdb78f" />
 
 ---
 
