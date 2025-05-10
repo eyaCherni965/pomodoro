@@ -36,7 +36,19 @@ Une application web simple et efficace de **gestion du temps** basée sur la mé
 - localStorage (persistance des données)
 - Vercel (déploiement)
 
+  
+## 📁 Structure du code 
+le code principal de l'application se trouve dans le dossier composants. Voici les fichiers clés :
 
+Timer.js : le composant principal qui gère le compte à rebours Pomodoro.
+
+Pause.js : gère la minuterie de pause avec une phrase motivante.
+
+Statistiques.js : affiche les statistiques hebdomadaires sous forme de graphique.
+
+Parametre.js : permet de modifier la durée du Pomodoro, de la pause, et d’activer les notifications.
+
+Le fichier App.js utilise react-router-dom pour afficher la bonne page selon l'URL (/, /pause, /stats, /parametre).
 
 ## 📁 Structure des pages
 
