@@ -66,10 +66,7 @@ function Timer() {
 
   // Incrémenter les sessions dans le localStorage
   function enregistrerSession() {
-    // Incrémenter le total général
-    let sessionNb = parseInt(localStorage.getItem("nbSessions")) || 0;
-    localStorage.setItem("nbSessions", sessionNb + 1);
-
+    
     // Enregistrer la durée réelle du Pomodoro utilisé
     const duree = parseInt(localStorage.getItem("pomodoro")) || 25;
     let historique = JSON.parse(localStorage.getItem("historiqueDurees")) || [];

@@ -37,14 +37,11 @@ function Statistiques() {
   const navigate = useNavigate();
 
   // Lire les sessions depuis localStorage
-  let nbSession = localStorage.getItem("nbSessions");
-  let nbS = parseInt(nbSession);
-  if (isNaN(nbS)) {
-    nbS = 0;
-  }
+const historique = JSON.parse(localStorage.getItem("historiqueDurees")) || [];
+const nbS = historique.length;
+
 
   // Calcul du temps total
-  const historique = JSON.parse(localStorage.getItem("historiqueDurees")) || [];
   const totalMinutes = historique.reduce((somme, duree) => somme + duree, 0);
   const heures = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
